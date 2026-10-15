@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=Cinzel:wght@400;600;700;800;900&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Creepster&family=Nosifer&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400;1,600&display=swap');
+@import "tailwindcss";
+
+:root {
+  --color-burgundy-950: #1b0408;
+  --color-burgundy-900: #2d070e;
+  --color-burgundy-800: #420d16;
+  --color-burgundy-700: #5c1421;
+  --color-burgundy-600: #7b1d2e;
+
+  --color-gold-light: #f7e7b4;
+  --color-gold-base: #d4af37;
+  --color-gold-dark: #997819;
+
+  --color-parchment-light: #fdfbf7;
+  --color-parchment-base: #f6eedb;
+  --color-parchment-aged: #ebdcbf;
+
+  --font-royal: 'Cinzel', serif;
+  --font-book: 'Cormorant Garamond', Georgia, serif;
+  --font-display: 'Playfair Display', serif;
+  --font-handwriting: 'Caveat', cursive;
+  --font-nosifer: 'Nosifer', cursive;
+  --font-creepster: 'Creepster', cursive;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #0c0607;
+  color: #241410;
+  font-family: var(--font-book);
+  background-image: 
+    radial-gradient(circle at 50% 25%, rgba(66, 13, 22, 0.5) 0%, rgba(12, 6, 7, 0.96) 80%),
+    repeating-linear-gradient(45deg, rgba(25, 12, 14, 0.3) 0px, rgba(25, 12, 14, 0.3) 2px, transparent 2px, transparent 10px);
+  min-height: 100vh;
+  overflow-x: hidden;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* Typography Classes */
+.font-royal { font-family: var(--font-royal); }
+.font-book { font-family: var(--font-book); }
+.font-display { font-family: var(--font-display); }
+.font-handwriting { font-family: var(--font-handwriting); }
+.font-nosifer { font-family: var(--font-nosifer); }
+.font-creepster { font-family: var(--font-creepster); }
+
+/* Blood Dripping Text Styles for O Stree Kal Ana */
+.blood-dripping-text {
+  font-family: 'Nosifer', 'Creepster', var(--font-royal), cursive, serif !important;
+  color: #ff1a2e !important;
+  text-shadow:
+    0 0 12px rgba(255, 0, 40, 1),
+    0 0 25px rgba(230, 0, 30, 0.9),
+    0 0 45px rgba(160, 0, 20, 0.95),
+    0 3px 6px rgba(0, 0, 0, 0.95);
+  letter-spacing: 0.12em;
+  filter: drop-shadow(0 0 12px rgba(255, 20, 40, 0.8));
+}
+
+@keyframes dripDrop {
+  0% {
+    transform: translateY(0) scaleY(1);
+    opacity: 0.95;
+  }
+  50% {
+    transform: translateY(25px) scaleY(1.6) scaleX(0.8);
+    opacity: 1;
+  }
+  85% {
+    transform: translateY(55px) scale(1);
+    opacity: 0.85;
+  }
+  100% {
+    transform: translateY(85px) scale(0.3);
+    opacity: 0;
+  }
+}
+
+.blood-drop-1 {
+  animation: dripDrop 2.2s cubic-bezier(0.55, 0.055, 0.675, 0.19) infinite;
+}
+
+.blood-drop-2 {
+  animation: dripDrop 2.7s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.8s infinite;
+}
+
+.blood-drop-3 {
+  animation: dripDrop 3.1s cubic-bezier(0.55, 0.055, 0.675, 0.19) 1.5s infinite;
+}
+
+.blood-drop-4 {
+  animation: dripDrop 2.5s cubic-bezier(0.55, 0.055, 0.675, 0.19) 0.4s infinite;
+}
+
+/* VINTAGE FRAYED LETTER (SHREDDED/DECKLED CORNERS & BURNISHED AGED EDGES) */
+.vintage-frayed-letter {
+  background-color: #f7eedb;
+  background-image: 
+    radial-gradient(circle at 0% 0%, rgba(139, 90, 43, 0.4) 0%, rgba(139, 90, 43, 0.15) 15%, transparent 35%),
+    radial-gradient(circle at 100% 0%, rgba(120, 75, 30, 0.45) 0%, rgba(120, 75, 30, 0.15) 15%, transparent 35%),
+    radial-gradient(circle at 0% 100%, rgba(110, 68, 25, 0.45) 0%, rgba(110, 68, 25, 0.15) 18%, transparent 35%),
+    radial-gradient(circle at 100% 100%, rgba(140, 85, 35, 0.5) 0%, rgba(140, 85, 35, 0.18) 18%, transparent 35%),
+    radial-gradient(circle at 50% 50%, rgba(255, 252, 245, 0.85) 0%, rgba(243, 230, 206, 0.7) 100%);
+  box-shadow: 
+    inset 0 0 50px rgba(100, 65, 30, 0.28),
+    inset 2px 2px 12px rgba(80, 50, 20, 0.35),
+    inset -2px -2px 12px rgba(80, 50, 20, 0.35),
+    0 15px 45px rgba(0, 0, 0, 0.75),
+    0 0 0 1px rgba(184, 151, 88, 0.4);
+  position: relative;
+  /* Subtle ragged/deckled edge illusion */
+  filter: drop-shadow(0 4px 6px rgba(0,0,0,0.3));
+}
+
+/* Frayed corner tears and weathered aging */
+.corner-fray-tl {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  background: radial-gradient(circle at 0% 0%, rgba(85, 45, 18, 0.8) 0%, rgba(130, 80, 35, 0.4) 45%, transparent 70%);
+  pointer-events: none;
+  border-top-left-radius: 4px;
+}
+
+.corner-fray-tr {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  background: radial-gradient(circle at 100% 0%, rgba(85, 45, 18, 0.8) 0%, rgba(130, 80, 35, 0.4) 45%, transparent 70%);
+  pointer-events: none;
+  border-top-right-radius: 4px;
+}
+
+.corner-fray-bl {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 38px;
+  height: 38px;
+  background: radial-gradient(circle at 0% 100%, rgba(85, 45, 18, 0.8) 0%, rgba(130, 80, 35, 0.4) 45%, transparent 70%);
+  pointer-events: none;
+  border-bottom-left-radius: 4px;
+}
+
+.corner-fray-br {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 38px;
+  height: 38px;
+  background: radial-gradient(circle at 100% 100%, rgba(85, 45, 18, 0.8) 0%, rgba(130, 80, 35, 0.4) 45%, transparent 70%);
+  pointer-events: none;
+  border-bottom-right-radius: 4px;
+}
+
+/* Ragged paper crease line */
+.letter-crease {
+  position: absolute;
+  left: 5%;
+  right: 5%;
+  top: 50%;
+  height: 1px;
+  background: linear-gradient(90deg, transparent 0%, rgba(150, 110, 65, 0.18) 15%, rgba(150, 110, 65, 0.18) 85%, transparent 100%);
+  box-shadow: 0 1px 1px rgba(255, 255, 255, 0.4);
+  pointer-events: none;
+}
+
+/* Leather Hardcover Texture */
+.leather-cover {
+  background-color: #2b080f;
+  background-image: 
+    radial-gradient(circle at 20% 20%, rgba(95, 24, 38, 0.7) 0%, transparent 50%),
+    radial-gradient(circle at 80% 80%, rgba(20, 3, 6, 0.9) 0%, transparent 60%),
+    repeating-linear-gradient(60deg, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 4px),
+    repeating-linear-gradient(-60deg, rgba(0, 0, 0, 0.08) 0px, rgba(0, 0, 0, 0.08) 1px, transparent 1px, transparent 4px);
+  box-shadow: 
+    inset 0 0 60px rgba(0, 0, 0, 0.85),
+    inset 2px 2px 6px rgba(255, 215, 150, 0.15),
+    0 25px 60px -15px rgba(0, 0, 0, 0.9),
+    0 0 0 1px rgba(180, 140, 60, 0.35);
+}
+
+/* Gold Foil Embossing Effect */
+.gold-foil-text {
+  background: linear-gradient(135deg, #fff2be 0%, #d4af37 35%, #96751c 65%, #fae298 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 1px 1px rgba(0, 0, 0, 0.65));
+}
+
+/* Wax Seal Button Pulse */
+@keyframes sealGlow {
+  0%, 100% {
+    box-shadow: 0 4px 15px rgba(123, 29, 46, 0.45), 0 0 0 1px rgba(212, 175, 55, 0.4);
+  }
+  50% {
+    box-shadow: 0 6px 25px rgba(163, 39, 62, 0.75), 0 0 0 2px rgba(247, 231, 180, 0.75);
+  }
+}
+
+.wax-seal-glow {
+  animation: sealGlow 2.8s ease-in-out infinite;
+}
+
+.book-container-3d {
+  perspective: 2500px;
+}
